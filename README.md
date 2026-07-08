@@ -9,14 +9,14 @@ alquileres = []
 PRECIO_HORA = 50
 
 # PROCEDIMIENTOS Y FUNCIONES
-def dni_existe(dni):
+    def dni_existe(dni):
     for cliente in clientes:
         if cliente["dni"] == dni:
             return True
     return False
 
 
-def registrar_cliente():
+    def registrar_cliente():
     print("\n--- Registrar Cliente ---")
     while True:
         nombre = input("Nombre: ").strip()
@@ -55,7 +55,7 @@ def registrar_cliente():
     print(f"Cliente registrado con éxito. ID asignado: {nuevo_id}")
 
 
-def agregar_bicicleta():
+    def agregar_bicicleta():
     print("\n--- Agregar Bicicleta ---")
 
     while True:
@@ -93,14 +93,14 @@ def agregar_bicicleta():
     print("Bicicleta agregada con éxito.")
 
 
-def codigo_bicicleta_existe(codigo):
+    def codigo_bicicleta_existe(codigo):
     for bicicleta in bicicletas:
         if bicicleta["codigo"] == codigo:
             return True
     return False
 
 
-def buscar_bicicleta(codigo):
+    def buscar_bicicleta(codigo):
     # En Python los índices empiezan en 0.
     # Devolvemos el índice si la encuentra, o -1 si no existe.
     for i in range(len(bicicletas)):
@@ -109,7 +109,7 @@ def buscar_bicicleta(codigo):
     return -1
 
 
-def alquilar():
+    def alquilar():
     print("\n--- Alquilar Bicicleta ---")
     id_cliente = int(input("ID Cliente: "))
     codigo = int(input("Codigo Bicicleta: "))
@@ -136,7 +136,7 @@ def alquilar():
             print("Bicicleta no disponible")
 
 
-def buscar_alquiler_activo(codigo):
+    def buscar_alquiler_activo(codigo):
     for i in range(len(alquileres)):
         if (alquileres[i]["codigoBici"] == codigo and
                 alquileres[i]["activo"]):
@@ -144,7 +144,7 @@ def buscar_alquiler_activo(codigo):
     return -1
 
 
-def devolver():
+    def devolver():
     print("\n--- Devolver Bicicleta ---")
     codigo = int(input("Codigo Bicicleta: "))
     hora_fin = int(input("Hora Fin: "))
@@ -171,7 +171,7 @@ def devolver():
         print(f"Importe a abonar: ${importe:.2f}")
 
 
-def estadisticas():
+    def estadisticas():
     print("\n--- Estadísticas del Sistema ---")
     print(f"Clientes registrados: {len(clientes)}")
     print(f"Bicicletas: {len(bicicletas)}")
@@ -179,9 +179,9 @@ def estadisticas():
 
 
 # PROCESO PRINCIPAL (MENU)
-def main():
-    opcion = -1
 
+    def main():
+    opcion = -1
     while opcion != 0:
         print("\n==============================")
         print(" SISTEMA ALQUILER BICICLETAS ")
@@ -217,3 +217,6 @@ def main():
 # Ejecutar el programa
 if __name__ == "__main__":
     main()
+    
+# IA utilizada, como la utilizamos y que conclusiones tenemos de sus respuestas
+Tenemos el uso de Claude, ChatGPT, Gemini y el copilot de Github, utilizamos tantas a modo de tener multiples puntos de vista respecto a la programacion estructurada que usa cada una, ya que utilizaban en su mayoria la programacion orientada a objetos, utilizamos sus opiniones respecto a como se programa en python para optimizar lo maximo posible con las ideas de lo que queriamos que fuera el programa ideal para dicho escenario. Respecto a las respuesta de cada una tomamos como punto positivo que proponen mucho respecto a que camino seguir luego de dar la respuesta sin embargo si queres planearle una idea tenes que ser muy especifico para que no reitere cosas que con sobreentendidas.
